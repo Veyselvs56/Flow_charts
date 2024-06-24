@@ -1,11 +1,15 @@
 # Flow_charts
-It contains simple demonstration examples of the algorithm with the Flowgorithm application. You can translate these flowcharts into programming languages ​​that the application allows.
-There are a total of 14 flowchart applications in the file. Applications are listed from simple to difficult.To see, change and edit Flowgorithm projects http://www.flowgorithm.org/download/
+Flowgorithm application is an application that helps beginners in algorithms and programming understand how the algorithm works.
+
+You can translate these flowcharts into programming languages ​​that the application allows.
+ Applications are listed from simple to difficult.To see, change and edit Flowgorithm projects http://www.flowgorithm.org/download/
 To use the Flowgorithm application, you can install it from this link.
 
 The application has a simple interface and language selection that you can learn on your own. 
 Examples have been developed to learn the logic and basis of the algorithm.
 These examples may be amateurish since I did them in first grade, but they will help learn the algorithm and programming logic.
+
+After the Flowgorithm application is installed, you can download the file as a zip file and review and change the samples.
 
 Below are images of the application.
 enlarged version of flowcharts
