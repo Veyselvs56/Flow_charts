@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="veyse"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-06-23 01:49:58 &#214;S"/>
+        <attribute name="created" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjM7MTA6MzU6MTIgw5bDljszMTU1"/>
+        <attribute name="edited" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjM7MTE6MTQ6MTMgw5bDljsxOzMyNjI="/>
+        <attribute name="edited" value="dmV5c2U7VkVZU0VMVlM7MjAyNC0wNi0yMzswMTo0OTo1OCDDllM7MTsyNzM1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="In a grading system where the passing grade is entered by the user, and where the midterm exam contributes 40% and the final exam contributes 60%, the program tells us the minimum final exam score needed based on the entered midterm score."/>
+            <declare name="Midterm, passingScore" type="Integer" array="False" size=""/>
+            <declare name="final" type="Real" array="False" size=""/>
+            <output expression="&quot;please enter the passing score&quot;" newline="True"/>
+            <input variable="passingScore"/>
+            <output expression="&quot;Please enter your midterm exam score.&quot;" newline="True"/>
+            <input variable="Midterm"/>
+            <assign variable="Final" expression="(passingScore-Midterm*0.4)/0.6"/>
+            <if expression="final&gt;100">
+                <then>
+                    <output expression="&quot;You failed the course.&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;The minimum score you need to get on the final exam.&quot; &amp;final" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

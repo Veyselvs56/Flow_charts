@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="veyse"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-06-23 01:20:21 &#214;S"/>
+        <attribute name="created" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjI7MDM6MjY6Mzcgw5ZTOzMwMzI="/>
+        <attribute name="edited" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjI7MDM6NDI6MTQgw5ZTOzE7MzEzMw=="/>
+        <attribute name="edited" value="dmV5c2U7VkVZU0VMVlM7MjAyNC0wNi0yMzswMToyMDoyMSDDllM7MTsyNzE0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Program that adds 1 to the entered number"/>
+            <declare name="total, n, i" type="Integer" array="False" size=""/>
+            <assign variable="total" expression="0"/>
+            <output expression="&quot;Up to what number do you want to sum the numbers?&quot;" newline="True"/>
+            <input variable="n"/>
+            <if expression="n&lt;1">
+                <then>
+                    <output expression="&quot;Please enter a value greater than or equal to one&quot;" newline="True"/>
+                </then>
+                <else>
+                    <for variable="i" start="1" end="n" direction="inc" step="1">
+                        <assign variable="total" expression="total+i"/>
+                    </for>
+                    <output expression="&quot;Total = &quot; &amp; total" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

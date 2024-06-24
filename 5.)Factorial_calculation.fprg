@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="veyse"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-06-23 01:39:39 &#214;S"/>
+        <attribute name="created" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjI7MDU6NTc6Mzkgw5ZTOzMwNDA="/>
+        <attribute name="edited" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjI7MDY6MTk6MDIgw5ZTOzE7MzEzNw=="/>
+        <attribute name="edited" value="dmV5c2U7VkVZU0VMVlM7MjAyNC0wNi0yMzswMTozOTozOSDDllM7MjsyNzM0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="A program that calculates the factorial of the entered value."/>
+            <declare name="Input, Counter, Result" type="Integer" array="False" size=""/>
+            <output expression="&quot;Please enter the value you want to calculate&quot;" newline="True"/>
+            <input variable="Input"/>
+            <assign variable="Result" expression="1"/>
+            <for variable="Counter" start="1" end="Input" direction="inc" step="1">
+                <assign variable="Result" expression="Result*Counter"/>
+            </for>
+            <output expression="Result" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

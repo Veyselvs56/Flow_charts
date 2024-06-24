@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="veyse"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-06-20 02:36:57 &#214;&#214;"/>
+        <attribute name="created" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjI7MDU6NDA6NTQgw5ZTOzMwMjk="/>
+        <attribute name="edited" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjI7MDU6NTc6MzUgw5ZTOzE7MzE0NA=="/>
+        <attribute name="edited" value="dmV5c2U7VkVZU0VMVlM7MjAyNC0wNi0yMDswMjozNjo1NyDDlsOWOzE7Mjg1OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Program that squares the numbers from 0 to the entered number and prints them on the screen"/>
+            <declare name="i, n" type="Integer" array="False" size=""/>
+            <output expression="&quot;Please enter the upper value whose square will be calculated&quot;" newline="True"/>
+            <input variable="n"/>
+            <for variable="i" start="0" end="n" direction="inc" step="1">
+                <output expression="i&amp; &quot;. square of the number =&quot; &amp;(i*i)" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

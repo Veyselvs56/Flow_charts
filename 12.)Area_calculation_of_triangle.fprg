@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="veyse"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-06-23 09:39:32 &#214;S"/>
+        <attribute name="created" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjI7MDQ6MDM6MTAgw5ZTOzMwMTk="/>
+        <attribute name="edited" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjI7MDQ6MTM6NDggw5ZTOzE7MzEzOQ=="/>
+        <attribute name="edited" value="dmV5c2U7VkVZU0VMVlM7MjAyNC0wNi0yMzswOTozOTozMiDDllM7MTsyNzM0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Program that calculates the area of &#8203;&#8203;the triangle according to the entered height (h) and base (x) values."/>
+            <declare name="h, x, T" type="Integer" array="False" size=""/>
+            <output expression="&quot;please enter the height value&quot;" newline="True"/>
+            <input variable="h"/>
+            <while expression="h&lt;=0">
+                <output expression="&quot;You entered the height value incorrectly. Please enter a value greater than 0&quot;" newline="True"/>
+                <input variable="h"/>
+            </while>
+            <output expression="&quot;Please enter the base value.&quot;" newline="True"/>
+            <input variable="x"/>
+            <while expression="x&lt;=0">
+                <output expression="&quot;You have entered the base value incorrectly, please enter a value greater than 0&quot;" newline="True"/>
+                <input variable="x"/>
+            </while>
+            <output expression="&quot;area of &#8203;&#8203;triangle = &quot; &amp; (h*x)/2" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

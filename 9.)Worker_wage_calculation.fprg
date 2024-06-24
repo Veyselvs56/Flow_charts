@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="veyse"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-06-23 03:39:54 &#214;S"/>
+        <attribute name="created" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjM7MTI6MDI6MDkgw5ZTOzMwMjY="/>
+        <attribute name="edited" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjM7MTI6MzQ6MDIgw5ZTOzE7MzEzMg=="/>
+        <attribute name="edited" value="dmV5c2U7VkVZU0VMVlM7MjAyNC0wNi0yMzswMzozOTo1NCDDllM7MjsyNzMz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="&quot;A program that calculates the wage of a worker. Normal wage up to 40 hours, then overtime. Normal wage is $10 per hour, overtime wage is $20 per hour.&quot;"/>
+            <declare name="hour, wage" type="Integer" array="False" size=""/>
+            <declare name="NameSurname" type="String" array="False" size=""/>
+            <output expression="&quot;Enter the worker's name and surname&quot;" newline="True"/>
+            <input variable="NameSurname"/>
+            <output expression="&quot;How many hours did your worker work?&quot;" newline="True"/>
+            <input variable="hour"/>
+            <if expression="hour&gt;40">
+                <then>
+                    <assign variable="wage" expression="400+(hour-40)*20"/>
+                </then>
+                <else>
+                    <assign variable="wage" expression="hour*10"/>
+                </else>
+            </if>
+            <output expression="&quot;worker's name = &quot; &amp;NameSurname" newline="True"/>
+            <output expression="&quot;working hours = &quot; &amp;hour" newline="True"/>
+            <output expression="&quot;worker's salary= &quot; &amp;wage" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

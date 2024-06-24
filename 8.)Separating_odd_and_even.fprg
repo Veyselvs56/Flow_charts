@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="veyse"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-06-23 03:20:01 &#214;S"/>
+        <attribute name="created" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjM7MTE6MTQ6MTggw5bDljszMTU5"/>
+        <attribute name="edited" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjM7MTE6Mjg6MTcgw5bDljsyOzMyNzI="/>
+        <attribute name="edited" value="dmV5c2U7VkVZU0VMVlM7MjAyNC0wNi0yMzswMzoyMDowMSDDllM7MjsyNzE1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="&quot;A program that prints odd and even numbers up to the entered number.&quot;"/>
+            <declare name="InputValue, i, number" type="Integer" array="False" size=""/>
+            <output expression="&quot;If you want to calculate odd numbers, press 1; if you want to calculate even numbers, press 0.&quot;" newline="True"/>
+            <input variable="InputValue"/>
+            <if expression="InputValue=1">
+                <then>
+                    <output expression="&quot;please enter the number&quot;" newline="True"/>
+                    <input variable="number"/>
+                    <for variable="i" start="1" end="number" direction="inc" step="2">
+                        <output expression="i" newline="True"/>
+                    </for>
+                </then>
+                <else>
+                    <output expression="&quot;please enter the number&quot;" newline="True"/>
+                    <input variable="number"/>
+                    <for variable="i" start="0" end="number" direction="inc" step="2">
+                        <output expression="i" newline="True"/>
+                    </for>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

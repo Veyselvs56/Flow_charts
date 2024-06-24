@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="veyse"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-06-24 04:32:30 &#214;&#214;"/>
+        <attribute name="created" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjI7MDI6NTU6NDcgw5ZTOzMwMzQ="/>
+        <attribute name="edited" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjI7MDM6MjY6MTkgw5ZTOzE7MzE0MA=="/>
+        <attribute name="edited" value="dmV5c2U7VkVZU0VMVlM7MjAyNC0wNi0yNDswNDozMjozMCDDlsOWOzI7Mjg1Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="&quot;A program that calculates the absolute value of two numbers.&quot;"/>
+            <declare name="Number1, Number2, subtraction" type="Integer" array="False" size=""/>
+            <assign variable="subtraction" expression="0"/>
+            <output expression="&quot;please enter the 1st number&quot;" newline="True"/>
+            <input variable="Number1"/>
+            <output expression="&quot;please enter the 2nd number&quot;" newline="True"/>
+            <input variable="Number2"/>
+            <if expression="Number1=Number2">
+                <then>
+                    <output expression="&quot;the numbers are equal and the result is 0&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="Number1&gt;Number2">
+                        <then>
+                            <assign variable="subtraction" expression="Number1-Number2"/>
+                        </then>
+                        <else>
+                            <assign variable="subtraction" expression="Number2-Number1"/>
+                        </else>
+                    </if>
+                    <output expression="&quot;subtraction = &quot; &amp; subtraction" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

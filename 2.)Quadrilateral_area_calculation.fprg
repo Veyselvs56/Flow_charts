@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="veyse"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-06-20 02:48:13 &#214;&#214;"/>
+        <attribute name="created" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjI7MDM6NTA6NTggw5ZTOzMwMzI="/>
+        <attribute name="edited" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjI7MDQ6MDM6MDAgw5ZTOzE7MzEyNg=="/>
+        <attribute name="edited" value="dmV5c2U7VkVZU0VMVlM7MjAyNC0wNi0yMDswMjo0ODoxMyDDlsOWOzI7Mjg1NQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Program to calculate quadrilateral area"/>
+            <declare name="edge1, edge2" type="Integer" array="False" size=""/>
+            <output expression="&quot;Please enter the 1st side of the geometric shape&quot;" newline="True"/>
+            <input variable="edge1"/>
+            <output expression="&quot;Please enter the 2nd side of the geometric shape&quot;" newline="True"/>
+            <input variable="edge2"/>
+            <if expression="edge1&lt;0 || edge1=0">
+                <then>
+                    <output expression="&quot;You did not enter the first edge according to the appropriate criteria, the edge must not be 0 and must be greater than 0!!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="edge2&lt;0 || edge2=0">
+                        <then>
+                            <output expression="&quot;You did not enter the first edge according to the appropriate criteria, the edge must not be 0 and must be greater than 0!!&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="edge1=edge2">
+                                <then>
+                                    <output expression="&quot;area of &#8203;&#8203;the square = &quot; &amp; edge1*edge2" newline="False"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Area of &#8203;&#8203;the rectangle = &quot; &amp; edge1*edge2" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

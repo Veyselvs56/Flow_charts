@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="veyse"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-06-23 10:59:01 &#214;S"/>
+        <attribute name="created" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDMtMDE7MDc6MDY6NDggw5ZTOzMwMzQ="/>
+        <attribute name="edited" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDMtMDE7MDg6MTI6Mjkgw5ZTOzM7MzE0MQ=="/>
+        <attribute name="edited" value="dmV5c2U7VkVZU0VMVlM7MjAyNC0wNi0yMzsxMDo1OTowMSDDllM7NzsyNzMw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="id, registeredPassword, UserName, Password" type="String" array="False" size=""/>
+            <declare name="a, select, FactorialN" type="Integer" array="False" size=""/>
+            <declare name="Number1, Number2" type="Real" array="False" size=""/>
+            <assign variable="UserName" expression="&quot;IronMan&quot;"/>
+            <assign variable="RegisteredPassword" expression="&quot;1453&quot;"/>
+            <output expression="&quot;welcome to the calculator&quot;" newline="True"/>
+            <output expression="&quot;Please enter your username and password to log in&quot;" newline="True"/>
+            <output expression="&quot;User name =&quot;" newline="True"/>
+            <input variable="id"/>
+            <output expression="&quot;Password =&quot;" newline="True"/>
+            <input variable="Password"/>
+            <assign variable="a" expression="3"/>
+            <while expression="id!=UserName|| Password!=registeredPassword">
+                <assign variable="a" expression="a-1"/>
+                <output expression="&quot;You entered the wrong password or username!!&quot;" newline="True"/>
+                <output expression="&quot;Your remaining right&quot;" newline="True"/>
+                <if expression="a==0">
+                    <then>
+                        <output expression="&quot;You have been kicked out of the system because you entered incorrectly more than 3 times&quot;" newline="True"/>
+                        <breakpoint expression="" always="True"/>
+                    </then>
+                    <else/>
+                </if>
+                <output expression="&quot;Please enter your username and password to log in&quot;" newline="True"/>
+                <output expression="&quot;User Name =&quot;" newline="True"/>
+                <input variable="id"/>
+                <output expression="&quot;Password=&quot;" newline="True"/>
+                <input variable="Password"/>
+            </while>
+            <output expression="&quot;Welcome to the system, please enter the transaction you want to perform&quot;" newline="True"/>
+            <output expression="&quot;1-addition, 2-subtraction, 3-multiplication, 4-division, 5-mode calculation, 6-factorial calculation&quot;" newline="True"/>
+            <input variable="select"/>
+            <if expression="select==1">
+                <then>
+                    <output expression="&quot;please enter the numbers you will calculate&quot;" newline="True"/>
+                    <input variable="Number1"/>
+                    <input variable="Number2"/>
+                    <call expression="addition(Number1,Number2)"/>
+                    <call expression="select&#13;&#10;"/>
+                </then>
+                <else>
+                    <if expression="select==2">
+                        <then>
+                            <output expression="&quot;please enter the numbers you will calculate&quot;" newline="True"/>
+                            <input variable="Number1"/>
+                            <input variable="Number2"/>
+                            <call expression="subtraction(Number1,Number2)"/>
+                            <call expression="select"/>
+                        </then>
+                        <else>
+                            <if expression="select==3">
+                                <then>
+                                    <output expression="&quot;please enter the numbers you will calculate&quot;" newline="True"/>
+                                    <input variable="Number1"/>
+                                    <input variable="Number2"/>
+                                    <call expression="multiplication(Number1,Number2)"/>
+                                    <call expression="select"/>
+                                </then>
+                                <else>
+                                    <if expression="select==4">
+                                        <then>
+                                            <output expression="&quot;please enter the numbers you will calculate&quot;" newline="True"/>
+                                            <input variable="Number1"/>
+                                            <input variable="Number2"/>
+                                            <call expression="division(Number1,Number2)&#13;&#10;"/>
+                                            <call expression="select"/>
+                                        </then>
+                                        <else>
+                                            <if expression="select==5">
+                                                <then>
+                                                    <output expression="&quot;please enter the numbers you will calculate&quot;" newline="True"/>
+                                                    <input variable="Number1"/>
+                                                    <input variable="Number2"/>
+                                                    <call expression="modeCalculation(Number1,Number2)"/>
+                                                    <call expression="select"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="select==6">
+                                                        <then>
+                                                            <output expression="&quot;please enter the number you will calculate&quot;" newline="True"/>
+                                                            <input variable="FactorialN"/>
+                                                            <call expression="factorial(FactorialN)"/>
+                                                            <call expression="select"/>
+                                                        </then>
+                                                        <else>
+                                                            <output expression="&quot;exit&quot;" newline="True"/>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="division" type="None" variable="">
+        <parameters>
+            <parameter name="x" type="Real" array="False"/>
+            <parameter name="y" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <if expression="y==0">
+                <then>
+                    <output expression="&quot;0 is not written in the denominator, therefore your operation is undefined.&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;quotient =&quot; &amp;(x/y)" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="multiplication" type="None" variable="">
+        <parameters>
+            <parameter name="x" type="Real" array="False"/>
+            <parameter name="y" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;multiplication=&quot; &amp;(x*y)" newline="True"/>
+        </body>
+    </function>
+    <function name="factorial" type="None" variable="">
+        <parameters>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i, counter" type="Integer" array="False" size=""/>
+            <assign variable="counter" expression="1"/>
+            <for variable="i" start="1" end="b" direction="inc" step="1">
+                <assign variable="counter" expression="counter*i"/>
+            </for>
+            <output expression="&quot;factorial=&quot; &amp;counter" newline="True"/>
+        </body>
+    </function>
+    <function name="subtraction" type="None" variable="">
+        <parameters>
+            <parameter name="x" type="Real" array="False"/>
+            <parameter name="y" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;subtraction=&quot; &amp;(x-y)" newline="True"/>
+        </body>
+    </function>
+    <function name="modeCalculation" type="None" variable="">
+        <parameters>
+            <parameter name="x" type="Real" array="False"/>
+            <parameter name="y" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;Mod =&quot; &amp;(x%y)" newline="True"/>
+        </body>
+    </function>
+    <function name="select" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="select, FactorialN, again" type="Integer" array="False" size=""/>
+            <declare name="Number1, Number2" type="Real" array="False" size=""/>
+            <output expression="&quot;If you want to perform the operation again, press 1; otherwise, press 0.&quot;" newline="True"/>
+            <input variable="again"/>
+            <if expression="again==1">
+                <then/>
+                <else>
+                    <output expression="&quot;see you later&quot;" newline="True"/>
+                    <breakpoint expression="" always="True"/>
+                </else>
+            </if>
+            <output expression="&quot;1-addition, 2-subtraction, 3-multiplication, 4-division, 5-mode calculation, 6-factorial calculation&quot;" newline="True"/>
+            <input variable="select"/>
+            <if expression="select==1">
+                <then>
+                    <output expression="&quot;please enter the numbers you will calculate&quot;" newline="True"/>
+                    <input variable="Number1"/>
+                    <input variable="Number2"/>
+                    <call expression="addition(Number1,Number2)"/>
+                    <call expression="select&#13;&#10;"/>
+                </then>
+                <else>
+                    <if expression="select==2">
+                        <then>
+                            <output expression="&quot;please enter the numbers you will calculate&quot;" newline="True"/>
+                            <input variable="Number1"/>
+                            <input variable="Number2"/>
+                            <call expression="subtraction(Number1,Number2)"/>
+                            <call expression="select"/>
+                        </then>
+                        <else>
+                            <if expression="select==3">
+                                <then>
+                                    <output expression="&quot;please enter the numbers you will calculate&quot;" newline="True"/>
+                                    <input variable="Number1"/>
+                                    <input variable="Number2"/>
+                                    <call expression="multiplication(Number1,Number2)"/>
+                                    <call expression="select"/>
+                                </then>
+                                <else>
+                                    <if expression="select==4">
+                                        <then>
+                                            <output expression="&quot;please enter the numbers you will calculate&quot;" newline="True"/>
+                                            <input variable="Number1"/>
+                                            <input variable="Number2"/>
+                                            <call expression="division(Number1,Number2)&#13;&#10;"/>
+                                            <call expression="select"/>
+                                        </then>
+                                        <else>
+                                            <if expression="select==5">
+                                                <then>
+                                                    <output expression="&quot;please enter the numbers you will calculate&quot;" newline="True"/>
+                                                    <input variable="Number1"/>
+                                                    <input variable="Number2"/>
+                                                    <call expression="modeCalculation(Number1,Number2)"/>
+                                                    <call expression="select"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="select==6">
+                                                        <then>
+                                                            <output expression="&quot;please enter the number you will calculate&quot;" newline="True"/>
+                                                            <input variable="FactorialN"/>
+                                                            <call expression="factorial(FactorialN)"/>
+                                                            <call expression="select"/>
+                                                        </then>
+                                                        <else>
+                                                            <output expression="&quot;exit&quot;" newline="True"/>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <input variable="se&#231;im"/>
+        </body>
+    </function>
+    <function name="addition" type="None" variable="">
+        <parameters>
+            <parameter name="x" type="Real" array="False"/>
+            <parameter name="y" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;addition=&quot; &amp;(x+y)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

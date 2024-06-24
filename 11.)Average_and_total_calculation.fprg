@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="veyse"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-06-23 09:25:32 &#214;S"/>
+        <attribute name="created" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjM7MDk6NDY6MjQgw5bDljszMTY4"/>
+        <attribute name="edited" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjM7MTA6MzA6MzYgw5bDljsyOzMyNjU="/>
+        <attribute name="edited" value="dmV5c2U7VkVZU0VMVlM7MjAyNC0wNi0yMzswOToyNTozMiDDllM7MjsyNzMw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Program to find the sum and average of n numbers between 0 and 100"/>
+            <declare name="Number, i, counter" type="Integer" array="False" size=""/>
+            <declare name="Total" type="Real" array="False" size=""/>
+            <assign variable="Total" expression="0"/>
+            <assign variable="counter" expression="0"/>
+            <output expression="&quot;How many numbers will you calculate?&quot;" newline="True"/>
+            <input variable="counter"/>
+            <for variable="i" start="1" end="counter" direction="inc" step="1">
+                <output expression="&quot;please enter the number&quot;" newline="True"/>
+                <input variable="Number"/>
+                <while expression="Number&lt;0 || Number&gt;100">
+                    <output expression="&quot;You have entered incorrect information, please log in again.&quot;" newline="True"/>
+                    <input variable="Number"/>
+                </while>
+                <assign variable="Total" expression="Total+Number"/>
+            </for>
+            <output expression="&quot;Total= &quot; &amp;Total" newline="True"/>
+            <output expression="&quot;average =&quot; &amp; Total/counter" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

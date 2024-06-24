@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="veyse"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-06-23 01:34:17 &#214;S"/>
+        <attribute name="created" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjM7MTI6MzQ6MDcgw5ZTOzMwMjk="/>
+        <attribute name="edited" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDItMjM7MTI6NTY6NTUgw5ZTOzE7MzE0NA=="/>
+        <attribute name="edited" value="dmV5c2U7VkVZU0VMVlM7MjAyNC0wNi0yMzswMTozNDoxNyDDllM7MTsyNzI0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="A program that performs basic arithmetic operations on two input numbers."/>
+            <declare name="number1, number2" type="Real" array="False" size=""/>
+            <declare name="choose, add, subtract, multiply, divide" type="Integer" array="False" size=""/>
+            <output expression="&quot;Please enter the 1st number&quot;" newline="True"/>
+            <input variable="number1"/>
+            <output expression="&quot;Please enter the 2nd number&quot;" newline="True"/>
+            <input variable="number2"/>
+            <output expression="&quot;Please select the operation you want to perform. 1=Add--2=Subtract--3=multiply--4=divide&quot;" newline="True"/>
+            <input variable="choose"/>
+            <if expression="choose==1">
+                <then>
+                    <output expression="&quot;Total=&quot; &amp;number1+number2" newline="True"/>
+                </then>
+                <else>
+                    <if expression="choose==2">
+                        <then>
+                            <if expression="number1&gt;number2">
+                                <then>
+                                    <output expression="&quot;subtract =&quot; &amp;number1-number2" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;subtract =&quot; &amp;number2-number1" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="choose==3">
+                                <then>
+                                    <output expression="&quot;Multiply =&quot; &amp;number1*number2" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="choose==4">
+                                        <then>
+                                            <output expression="&quot;divide =&quot; &amp;number1/number2" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;You made an incorrect choice.&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

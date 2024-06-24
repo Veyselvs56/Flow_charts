@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="veyse"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-06-24 03:56:41 &#214;&#214;"/>
+        <attribute name="created" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDMtMDE7MDg6MjQ6MTEgw5ZTOzMwMjU="/>
+        <attribute name="edited" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDMtMDE7MDg6MjY6MDMgw5ZTOzE7dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDMtMDE7MDc6MDY6NDggw5ZTO2hlc2FwIG1ha2luZXNpLmZwcmc7ODE3NQ=="/>
+        <attribute name="edited" value="dmV5c2U7REVTS1RPUC00MVBKVTVUOzIwMjEtMDMtMDE7MDk6MzA6MDggw5ZTOzM7MzEzOQ=="/>
+        <attribute name="edited" value="dmV5c2U7VkVZU0VMVlM7MjAyNC0wNi0yNDswMzo1Njo0MSDDlsOWOzY7Mjg2NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Id, Password, UserName, registeredPassword" type="String" array="False" size=""/>
+            <declare name="accountBalance, moneyTransaction, dollar" type="Real" array="False" size=""/>
+            <declare name="a, select, transaction" type="Integer" array="False" size=""/>
+            <assign variable="Id" expression="&quot;IronMan&quot;"/>
+            <assign variable="dollar" expression="5.40"/>
+            <assign variable="registeredPassword" expression="&quot;1453&quot;"/>
+            <assign variable="accountBalance" expression="1000"/>
+            <output expression="&quot;welcome to our bank&quot;" newline="True"/>
+            <output expression="&quot;Please enter your username and password to log in&quot;" newline="True"/>
+            <output expression="&quot;Username=&quot;" newline="True"/>
+            <input variable="UserName"/>
+            <output expression="&quot;Password=&quot;" newline="True"/>
+            <input variable="Password"/>
+            <assign variable="a" expression="3"/>
+            <while expression="Id!=UserName || registeredPassword!=Password">
+                <assign variable="a" expression="a-1"/>
+                <output expression="&quot;You entered the wrong password or username!!&quot;" newline="True"/>
+                <output expression="&quot;Remaining attempts =&quot; &amp;a" newline="True"/>
+                <if expression="a==0">
+                    <then>
+                        <output expression="&quot;You have been kicked out of the system because you entered incorrectly more than 3 times&quot;" newline="True"/>
+                        <breakpoint expression="" always="True"/>
+                    </then>
+                    <else/>
+                </if>
+                <output expression="&quot;Please enter your username and password to log in&quot;" newline="True"/>
+                <output expression="&quot;Username =&quot;" newline="True"/>
+                <input variable="Id"/>
+                <output expression="&quot;Password =&quot;" newline="True"/>
+                <input variable="Password"/>
+            </while>
+            <output expression="&quot;Welcome to the system, please enter the transaction you want to perform&quot;" newline="True"/>
+            <output expression="&quot;1-withdrawal, 2-deposit, 3-convert balance to dollars, 4-balance query&quot;" newline="True"/>
+            <input variable="select"/>
+            <if expression="select==1">
+                <then>
+                    <output expression="&quot;Please enter the amount you want to withdraw.&quot;" newline="True"/>
+                    <input variable="moneyTransaction"/>
+                    <if expression="moneyTransaction&gt;accountBalance">
+                        <then>
+                            <output expression="&quot;Insufficient balance, please enter again.&quot;" newline="True"/>
+                            <call expression="Again"/>
+                            <breakpoint expression="" always="True"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <assign variable="accountBalance" expression="accountBalance-moneyTransaction"/>
+                    <output expression="&quot;Remaining balance =&quot; &amp;accountBalance" newline="True"/>
+                    <output expression="&quot;Do you want to perform another transaction? You can say 1 for yes, 0 for no.&quot;" newline="True"/>
+                    <input variable="transaction"/>
+                    <if expression="transaction==1">
+                        <then>
+                            <call expression="Again(accountBalance)"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Don't forget to take your card&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="select==2">
+                        <then>
+                            <output expression="&quot;Please enter the amount you want to deposit.&quot;" newline="True"/>
+                            <input variable="moneyTransaction"/>
+                            <assign variable="accountBalance" expression="accountBalance+moneyTransaction"/>
+                            <output expression="&quot;Remaining balance =&quot; &amp;accountBalance" newline="True"/>
+                            <output expression="&quot;Do you want to perform another transaction? You can say 1 for yes, 0 for no.&quot;" newline="True"/>
+                            <input variable="transaction"/>
+                            <if expression="transaction==1">
+                                <then>
+                                    <call expression="Again(accountBalance)"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Don't forget to take your card&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="select==3">
+                                <then>
+                                    <output expression="&quot;Please enter the amount you want to convert to dollars.&quot;" newline="True"/>
+                                    <input variable="moneyTransaction"/>
+                                    <output expression="moneyTransaction&amp; &quot;TL =&quot; &amp;(moneyTransaction/dollar)&amp; &quot;Dollar&quot;" newline="True"/>
+                                    <output expression="&quot;Do you want to perform another transaction? You can say 1 for yes, 0 for no.&quot;" newline="True"/>
+                                    <input variable="transaction"/>
+                                    <if expression="transaction==1">
+                                        <then>
+                                            <call expression="Again(accountBalance)"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Don't forget to take your card&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <if expression="select==4">
+                                        <then>
+                                            <output expression="&quot;Remaining balance  =&quot; &amp;accountBalance" newline="True"/>
+                                            <output expression="&quot;Do you want to perform another transaction? You can say 1 for yes, 0 for no.&quot;" newline="True"/>
+                                            <input variable="transaction"/>
+                                            <if expression="transaction==1">
+                                                <then>
+                                                    <call expression="Again(accountBalance)"/>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot;Don't forget to take your card&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="Again" type="None" variable="">
+        <parameters>
+            <parameter name="accountBalance" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="moneyTransaction, dollar" type="Real" array="False" size=""/>
+            <declare name="a, select, transaction" type="Integer" array="False" size=""/>
+            <assign variable="dollar" expression="5.40"/>
+            <output expression="&quot;1-Withdrawal , 2-Deposit , 3-Convert the balance to dollars , 4-balance inquiry&quot;" newline="True"/>
+            <input variable="select"/>
+            <if expression="select==1">
+                <then>
+                    <output expression="&quot;Please enter the amount you want to withdraw.&quot;" newline="True"/>
+                    <input variable="moneyTransaction"/>
+                    <if expression="moneyTransaction&gt;accountBalance">
+                        <then>
+                            <output expression="&quot;Insufficient balance, please enter again.&quot;" newline="True"/>
+                            <call expression="Again"/>
+                            <breakpoint expression="" always="True"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <assign variable="accountBalance" expression="accountBalance-moneyTransaction"/>
+                    <output expression="&quot;Remaining balance =&quot; &amp;accountBalance" newline="True"/>
+                    <output expression="&quot;Do you want to perform another transaction? You can say 1 for yes, 0 for no.&quot;" newline="True"/>
+                    <input variable="transaction"/>
+                    <if expression="transaction==1">
+                        <then>
+                            <call expression="Again(accountBalance)"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Don't forget to take your card&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="select==2">
+                        <then>
+                            <output expression="&quot;Please enter the amount you want to deposit.&quot;" newline="True"/>
+                            <input variable="moneyTransaction"/>
+                            <assign variable="accountBalance" expression="accountBalance+moneyTransaction"/>
+                            <output expression="&quot;Remaining balance =&quot; &amp;accountBalance" newline="True"/>
+                            <output expression="&quot;Do you want to perform another transaction? You can say 1 for yes, 0 for no.&quot;" newline="True"/>
+                            <input variable="transaction"/>
+                            <if expression="transaction==1">
+                                <then>
+                                    <call expression="Again(accountBalance)"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Don't forget to take your card&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="select==3">
+                                <then>
+                                    <output expression="&quot;Please enter the amount you want to convert to dollars.&quot;" newline="True"/>
+                                    <input variable="moneyTransaction"/>
+                                    <output expression="moneyTransaction&amp; &quot;TL =&quot; &amp;(moneyTransaction/dollar)&amp; &quot;Dollar&quot;" newline="True"/>
+                                    <output expression="&quot;Do you want to perform another transaction? You can say 1 for yes, 0 for no.&quot;" newline="True"/>
+                                    <input variable="transaction"/>
+                                    <if expression="transaction==1">
+                                        <then>
+                                            <call expression="Again(accountBalance)"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Don't forget to take your card&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <if expression="select==4">
+                                        <then>
+                                            <output expression="&quot;Remaining balance  =&quot; &amp;accountBalance" newline="True"/>
+                                            <output expression="&quot;Do you want to perform another transaction? You can say 1 for yes, 0 for no.&quot;" newline="True"/>
+                                            <input variable="moneyTransaction"/>
+                                            <if expression="transaction==1">
+                                                <then>
+                                                    <call expression="Again(accountBalance)"/>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot;Don't forget to take your card&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
